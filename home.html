@@ -80,12 +80,8 @@
         .home-text {
             width: 50%;
             margin: 0 auto;
-            /* Center horizontally */
             text-align: center;
-            /* Text center */
-            
             padding: 50px;
-           
         }
 
         /* ----------- FEATURED PRODUCTS ----------- */
@@ -110,12 +106,8 @@
             overflow: hidden;
             padding-bottom: 15px;
             box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
-            transition: 0.3s;
-        }
-
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
         }
 
         .product-card img {
@@ -147,11 +139,7 @@
             position: relative;
             overflow: hidden;
             cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .category-box:hover {
-            transform: scale(1.03);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .category-box span {
@@ -197,8 +185,6 @@
         }
 
         .social-icons {
-            /* display: flex; */
-            /* gap: 12px; */
             margin-top: 20px;
         }
 
@@ -216,11 +202,9 @@
             cursor: pointer;
             gap: 10px;
             margin-left: 10px;
-
         }
 
         .icon:hover {
-            /* background: #f5c518; */
             color: black;
         }
 
@@ -231,6 +215,35 @@
             font-size: 14px;
             color: #aaa;
             border-top: 1px solid #333;
+        }
+
+        /* ----------- HOVER GLOW ANIMATION ----------- */
+        @keyframes float-glow {
+            0% { transform: translateY(0px); box-shadow: 0 0 15px rgba(245,197,24,0.4); }
+            50% { transform: translateY(-5px); box-shadow: 0 0 25px rgba(245,197,24,0.6); }
+            100% { transform: translateY(0px); box-shadow: 0 0 15px rgba(245,197,24,0.4); }
+        }
+
+        .product-card:hover, .category-box:hover {
+            animation: float-glow 1.5s ease-in-out infinite;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(245,197,24,0.5);
+        }
+
+        .product-card::before, .category-box::before {
+            content: '';
+            position: absolute;
+            top: -10px; left: -10px;
+            right: -10px; bottom: -10px;
+            border-radius: 15px;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s;
+            box-shadow: 0 0 40px rgba(245,197,24,0.3);
+        }
+
+        .product-card:hover::before, .category-box:hover::before {
+            opacity: 1;
         }
     </style>
 </head>
@@ -252,8 +265,8 @@
         <h1>Discover the Latest Fashion Trends for Every Season</h1>
     </section>
 
-    <div class="home-text" style=" text-align: center;">
-        <h2>The Art of Beautiful Comfort and luxury</h2><br>
+    <div class="home-text">
+        <h2>The Art of Beautiful Comfort and Luxury</h2><br>
         <p style="opacity: 0.5;">At our Jaheez Store, we believe that quality sleep begins with quality materials. Our bedding collections are
             thoughtfully designed using sustainably sourced fabrics, expert craftsmanship, and an unwavering attention
             to detail. Experience the difference of sleeping in true comfort.</p>
@@ -264,36 +277,33 @@
         <h2 class="section-title">Featured Products</h2>
         <div class="products">
             <div class="product-card">
-                <img src="./curtain.webp">
+                <img src="./curtain.webp" alt="Luxury Curtains">
                 <h3>Luxury Curtains</h3>
             </div>
 
             <div class="product-card">
-                <img src="./premium-bedsheet.jfif">
+                <img src="./premium-bedsheet.jfif" alt="Premium Bedsheets">
                 <h3>Premium Bedsheets</h3>
             </div>
 
             <div class="product-card">
-                <img src="./pillow.jfif">
+                <img src="./pillow.jfif" alt="Comfortable pillows">
                 <h3>Comfortable pillows</h3>
             </div>
 
             <div class="product-card">
-                <img src="./sofa-cover.png">
+                <img src="./sofa-cover.png" alt="Elegant Quilted Sofa Cover">
                 <h3>Elegant Quilted Sofa Cover</h3>
             </div>
 
-
             <div class="product-card">
-                <img src="./blanket.jfif">
+                <img src="./blanket.jfif" alt="Soft Blankets">
                 <h3>Soft Blankets</h3>
             </div>
-
         </div>
     </div>
 
     <!-- CATEGORIES -->
-
     <h2 class="section-title">OUR COLLECTION</h2>
     <div class="categories">
         <div class="category-box" style="background-image: url('./blanket.jfif');">
@@ -308,7 +318,6 @@
             <span>Sofa Covers</span>
         </div>
     </div>
-
 
     <!-- FOOTER -->
     <footer>
@@ -329,10 +338,8 @@
             <div class="footer-box">
                 <h3>Follow Us</h3>
                 <div class="social-icons">
-                    <div class="icon"><i class="fa-brands fa-facebook" style="padding-bottom: 10px;"></i><a
-                            href="">Facebook</a></div>
-                    <div class="icon"><i class="fa-brands fa-instagram" style="padding-bottom: 10px;"></i></i><a
-                            href="">Instagram</a></div>
+                    <div class="icon"><i class="fa-brands fa-facebook" style="padding-bottom: 10px;"></i><a href="">Facebook</a></div>
+                    <div class="icon"><i class="fa-brands fa-instagram" style="padding-bottom: 10px;"></i><a href="">Instagram</a></div>
                 </div>
             </div>
 
