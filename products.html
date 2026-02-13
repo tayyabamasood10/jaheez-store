@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Jaheez Store
+
+    </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f7f7f7;
+            color: #333;
+        }
+
+        /* ----------- NAVBAR ----------- */
+        nav {
+            width: 100%;
+            background: #111;
+            color: white;
+            padding: 15px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav .logo {
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        nav ul li:hover {
+            color: #f5c518;
+            transition: 0.3s;
+        }
+
+        /* PRODUCTS SECTION */
+        .products-section {
+            width: 90%;
+            max-width: 1200px;
+            margin: 50px auto;
+        }
+
+        .products-section h2 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 40px;
+            color: #222;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+            text-align: center;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-card img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .product-card h3 {
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .price {
+            font-size: 18px;
+            font-weight: bold;
+            color: #ff6600;
+            margin-bottom: 12px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #25d366;
+            color: #fff;
+            padding: 10px 18px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #1ebd58;
+        }
+
+        /* ----------- FOOTER SECTION ----------- */
+        footer {
+            background: #111;
+            color: white;
+            padding: 40px 8%;
+            margin-top: 60px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-box h3 {
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .footer-box p,
+        .footer-box a {
+            font-size: 15px;
+            margin-bottom: 8px;
+            color: #ccc;
+        }
+
+        .footer-links a:hover {
+            color: #f5c518;
+            transition: 0.3s;
+        }
+
+        .social-icons {
+            /* display: flex; */
+            /* gap: 12px; */
+            margin-top: 20px;
+        }
+
+        .icon {
+            height: 38px;
+            width: 38px;
+            border-radius: 50%;
+            background: #222;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 18px;
+            transition: 0.3s;
+            cursor: pointer;
+            gap: 10px;
+            margin-left: 10px;
+        }
+
+        .icon:hover {
+            /* background: #f5c518; */
+            color: black;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 35px;
+            padding-top: 15px;
+            font-size: 14px;
+            color: #aaa;
+            border-top: 1px solid #333;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="logo">Jaheez Store</div>
+        <ul>
+            <li ><a href="home.html" style="color: white; ">Home</a></li>
+            <li><a class="active" href="products.html" style="color: white;">Products</a></li>
+            <li><a href="contact.html" style="color: white;">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- PRODUCTS SECTION -->
+    <section class="products-section">
+        <h2>Our Products</h2>
+
+        <div class="product-grid">
+
+            <!-- PRODUCT 1 -->
+            <div class="product-card">
+                <img src="./curtain.webp" alt="Product">
+                <h3>Classic White Curtains</h3>
+                <p class="price">Rs 1200</p>
+                <a class="btn" href="https://wa.me/92300000000?text=I want to order: Classic White Curtain">
+                    Order on WhatsApp
+                </a>
+            </div>
+
+            <!-- PRODUCT 2 -->
+            <div class="product-card">
+                <img src="./pillow.jfif" alt="Product">
+                <h3>Soft Pillows</h3>
+                <p class="price">Rs 1800</p>
+                <a class="btn" href="https://wa.me/923001234567?text=I want to order: Soft Pillows">
+                    Order on WhatsApp
+                </a>
+            </div>
+
+            <!-- PRODUCT 3 -->
+            <div class="product-card">
+                <img src="./sofa-cover.png" alt="Product">
+                <h3>Soft Cover</h3>
+                <p class="price">Rs 2500</p>
+                <a class="btn" href="https://wa.me/923001234567?text=I want to order: Soft Cover">
+                    Order on WhatsApp
+                </a>
+            </div>
+
+            <!-- PRODUCT 4 -->
+            <div class="product-card">
+                <img src="./blanket.jfif" alt="Product" height="250px">
+                <h3>Comfort Blanket</h3>
+                <p class="price">Rs 2000</p>
+                <a class="btn" href="https://wa.me/923001234567?text=I want to order: Comfort Blanket">
+                    Order on WhatsApp
+                </a>
+            </div>
+
+           <!-- PRODUCT 5 -->
+            <div class="product-card">
+                <img src="./curtain.webp" alt="Product">
+                <h3>Classic White Curtains</h3>
+                <p class="price">Rs 1200</p>
+                <a class="btn" href="https://wa.me/923001234567?text=I want to order: Classic White Curtain">
+                    Order on WhatsApp
+                </a>
+            </div>
+
+            <!-- PRODUCT 6 -->
+            <div class="product-card">
+                <img src="./pillow.jfif" alt="Product">
+                <h3>Soft Pillows</h3>
+                <p class="price">Rs 1800</p>
+                <a class="btn" href="https://wa.me/923001234567?text=I want to order: Soft Pillows">
+                    Order on WhatsApp
+                </a>
+            </div>
+
+            <!-- PRODUCT 7 -->
+            <div class="product-card">
+                <img src="./sofa-cover.png" alt="Product">
+                <h3>Soft Cover</h3>
+                <p class="price">Rs 2500</p>
+                <a class="btn" href="https://wa.me/923001234567?text=I want to order: Soft Cover">
+                    Order on WhatsApp
+                </a>
+            </div>
+
+            <!-- PRODUCT 8 -->
+            <div class="product-card">
+                <img src="./blanket.jfif" alt="Product" height="250px">
+                <h3>Comfort Blanket</h3>
+                <p class="price">Rs 2000</p>
+                <a class="btn" href="https://wa.me/923001234567?text=I want to order: Comfort Blanket">
+                    Order on WhatsApp
+                </a>
+            </div>
+
+
+
+            <!-- PRODUCT 5 -->
+            <div class="product-card">
+                <img src="./curtain.webp" alt="Product">
+                <h3>Classic White Curtains</h3>
+                <p class="price">Rs 1200</p>
+                <a class="btn" href="https://wa.me/923001234567?text=I want to order: Classic White Curtain">
+                    Order on WhatsApp
+                </a>
+            </div>
+
+            <!-- PRODUCT 6 -->
+            <div class="product-card">
+                <img src="./pillow.jfif" alt="Product">
+                <h3>Soft Pillows</h3>
+                <p class="price">Rs 1800</p>
+                <a class="btn" href="https://wa.me/923001234567?text=I want to order: Soft Pillows">
+                    Order on WhatsApp
+                </a>
+            </div>
+
+
+
+
+            <!-- PRODUCT 11 -->
+            <div class="product-card">
+                <img src="./blanket.jfif" alt="Product">
+                <h3>Blanket</h3>
+                <p class="price">Rs 2000</p>
+                <a class="btn" href="https://wa.me/923120758006?text=I want to order: Blanket">
+                    Order on WhatsApp
+                </a>
+            </div>
+
+
+
+            <!-- PRODUCT 1 -->
+            <div class="product-card">
+                <img src="./curtain.webp" alt="Product">
+                <h3>Classic White Curtains</h3>
+                <p class="price">Rs 1200</p>
+                <a class="btn" href="https://wa.me/923001234567?text=I want to order: Classic White Curtain">
+                    Order on WhatsApp
+                </a>
+            </div>
+
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+
+            <div class="footer-box">
+                <h3>Jaheez Store</h3>
+                <p>Where Comfort Meets Elegance.</p>
+            </div>
+
+            <div class="footer-box footer-links">
+                <h3>Quick Links</h3>
+                <a href="home.html">Home</a><br>
+                <a href="products.html">Products</a><br>
+                <a href="contact.html">Contact</a>
+            </div>
+
+            <div class="footer-box">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <div class="icon"><i class="fa-brands fa-facebook" style="padding-bottom: 10px;"></i><a href="">Facebook</a></div>
+                    <div class="icon"><i class="fa-brands fa-instagram" style="padding-bottom: 10px;"></i></i><a href="">Instagram</a></div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            © 2026 Jaheez Store. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+
+</html>
